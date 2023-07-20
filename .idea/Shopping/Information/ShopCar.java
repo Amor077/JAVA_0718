@@ -9,10 +9,6 @@ import Shopping.DBUtil;
 import java.util.*;
 import java.sql.*;
 
-/**
- * @author wjp
- * @date 2023/7/19 11:12
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
