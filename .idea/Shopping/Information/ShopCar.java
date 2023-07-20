@@ -25,7 +25,7 @@ public class ShopCar {
     private double sum_price;
 
     public static void display(int uid) {
-        String sql = "select * from shopcar where user_id=" + uid;
+        String sql = "select * from shopcar where user_id = 1";
         try (Connection c = DBUtil.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
@@ -43,7 +43,7 @@ public class ShopCar {
         System.out.println("是否继续下一步操作");
         System.out.println("----------------");
         System.out.println("1.返回上个界面");
-        System.out.println("2.退出当前界面");
+        System.out.println("2.退出");
         System.out.println("----------------");
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine();

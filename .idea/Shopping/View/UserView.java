@@ -16,14 +16,17 @@ public class UserView {
         Scanner sc = new Scanner(System.in);
         System.out.println("您可以进行的操作");
         System.out.println("----------------");
-        System.out.println("1.浏览商城");
-        System.out.println("2.查看个人购物车");
+        System.out.println("1.浏览商城商品信息");
+        System.out.println("2.购物车");
         System.out.println("----------------");
         System.out.println("3.返回上一步");
         String choice = sc.nextLine();
         switch (choice) {
             case "1":
                 Catalog.merchandiseDisplay();
+                Catalog.shopping(uid);
+                System.out.println("购买成功！");
+                UserView.userFeatureSelection(uid);
                 break;
             case "2": {
                 ShopCar.display(uid);

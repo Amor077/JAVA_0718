@@ -39,7 +39,7 @@ public class Catalog {
         }
     }
 
-    public void shopping(int uid) {
+    public static void shopping(int uid) {
         System.out.println("请输入购买商品id：");
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
@@ -49,10 +49,11 @@ public class Catalog {
              PreparedStatement ps = c.prepareStatement(sql)) {
             //判断商品是否还有存货
             ResultSet rs = ps.executeQuery();
+            while (rs.next()){
             if (rs.getInt("stock_num") < 0) {
                 System.out.println("无货请换购！");
                 shopping(uid);
-            }
+            }}
         } catch (Exception e) {
             e.printStackTrace();
         }
