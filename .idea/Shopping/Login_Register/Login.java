@@ -16,6 +16,7 @@ public class Login {
         System.out.println("请你选择登录用户");
         System.out.println("1.管理员");
         System.out.println("2.用户");
+        System.out.println("----------------");
         String choice = sc.nextLine();
         switch (choice) {
             case "1":

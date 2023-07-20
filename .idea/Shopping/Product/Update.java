@@ -89,23 +89,21 @@ public class Update {
                 String sql1 = "delete from product where product_id=" + proId;
                 PreparedStatement ps1 = c.prepareStatement(sql1);
                 ps1.execute();
+                System.out.println("删除商品成功");
             } else
             //如果没有该商品，重新选择操作
             {
                 System.out.println("商品不存在");
                 productView(adminId);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("删除商品成功");
         AdministratorView.administratorOperate(adminId);
     }
 
     /**
      * 商品更新
-     *
      * @param adminId 登录成功的管理id
      */
     public static void productUpdate(int adminId) {
@@ -131,36 +129,35 @@ public class Update {
             if (productExist) {
                 Scanner sc1 = new Scanner(System.in);
 
-                System.out.println("请输入修改后商品名称");
+                System.out.println("请输入修改后商品名称:");
                 String product_name = sc1.nextLine();
                 ps1.setString(1, product_name);
 
 
-                System.out.println("请输入修改后商品价格");
+                System.out.println("请输入修改后商品价格:");
                 String product_price = sc1.nextLine();
                 ps1.setDouble(2, Double.parseDouble(product_price));
 
-                System.out.println("请输入修改后商品存货量");
+                System.out.println("请输入修改后商品存货量:");
                 int stock_num = sc1.nextInt();
                 ps1.setInt(3, stock_num);
 
-                System.out.println("请输入修改后商品属性id");
+                System.out.println("请输入修改后商品属性ID:");
                 int property_id = sc1.nextInt();
                 ps1.setInt(4, property_id);
 
                 ps1.execute();
-                System.out.println("更新商品成功");
+                System.out.println("更新商品成功!");
             } else
             //如果没有该商品，重新选择操作
             {
-                System.out.println("商品不存在");
+                System.out.println("商品不存在!");
                 productView(adminId);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         AdministratorView.administratorOperate(adminId);
     }
 }

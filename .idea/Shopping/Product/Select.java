@@ -25,7 +25,7 @@ public class Select {
                 String sql1="select property_name from property where property_id="+rs.getInt("product_id");
                 PreparedStatement ps1=c.prepareStatement(sql1);
                 ResultSet rs1=ps1.executeQuery();
-                rs1.next();
+                while(rs1.next()){
                 int product_id=rs.getInt("product_id");
                 String product_name=rs.getString("product_name");
                 double product_price=rs.getDouble("product_price");
@@ -46,7 +46,7 @@ public class Select {
                         +"  存货量:"+rs.getInt("stock_num")
                         +"  销量:"+rs.getInt("sales_num")
                         +"  商品属性:"+rs1.getString("property_name"));
-            }
+            }}
         } catch (Exception e) {
             e.printStackTrace();
         }

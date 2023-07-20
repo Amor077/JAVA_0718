@@ -36,9 +36,7 @@ public class UpdateO {
 
     public static void orderAdd(int adminId) {
 
-        String sql = "insert into orders(user_id,product_id," +
-                "product_name,product_price,product_num,order_sum_price,order_state) " +
-                "values(?,?,?,?,?,?,?)";
+        String sql = "insert into orders(user_id,product_id,  product_name,product_price,product_num,order_sum_price,order_state)  values(?,?,?,?,?,?,?)";
         try (Connection c = DBUtil.getConnection();
              PreparedStatement pr = c.prepareStatement(sql)) {
             Scanner sc = new Scanner(System.in);

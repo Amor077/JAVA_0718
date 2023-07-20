@@ -41,8 +41,10 @@ public class ShopCar {
             e.printStackTrace();
         }
         System.out.println("是否继续下一步操作");
+        System.out.println("----------------");
         System.out.println("1.返回上个界面");
         System.out.println("2.退出当前界面");
+        System.out.println("----------------");
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine();
         switch (choice) {

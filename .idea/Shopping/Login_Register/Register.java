@@ -13,6 +13,7 @@ public class Register {
         System.out.println("用户注册");
         System.out.println("1.管理员");
         System.out.println("2.普通用户");
+        System.out.println("----------------");
         String choice = sc.nextLine();
         switch (choice) {
             case "1":
@@ -66,9 +67,9 @@ public class Register {
             administratorRegister();
         }
         System.out.println("注册成功");
-        System.out.println("返回上一步:1.yes||2.no");
+        System.out.println("返回上一步:1.是||2.否");
         String choice = sc.nextLine();
-        if ("yes".equals(choice) || "1".equals(choice)) {
+        if ("1".equals(choice)) {
             MainView.mainView();
         } else {
             return;
@@ -108,9 +109,9 @@ public class Register {
             userRegister();
         }
         System.out.println("注册成功！");
-        System.out.println("返回上一步:1.yes||2.no");
+        System.out.println("返回上一步:1.是||2.否");
         String choice = sc.nextLine();
-        if ("yes".equals(choice) || "1".equals(choice)) {
+        if ("1".equals(choice)) {
             MainView.mainView();
         } else {
             return;
